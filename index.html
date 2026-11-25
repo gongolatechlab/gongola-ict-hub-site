@@ -32,6 +32,21 @@
         html { scroll-behavior: smooth; }
         .hub-mobile-menu[hidden] { display: none !important; }
         @media(max-width:767px){.hub-mobile-menu{display:flex;flex-direction:column;padding:8px 24px 16px;background:#11171d;border-top:1px solid #29343d}.hub-mobile-menu a{padding:12px 4px;border-bottom:1px solid #29343d;color:#dbe4e6;font-size:14px}}
+        
+.showcase-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start;margin:0}
+.showcase-frame{margin:0;padding:9px;border:1px solid #584c39;border-radius:17px;background:#101923;box-shadow:0 16px 35px #0005;min-width:0;overflow:hidden}
+.showcase-frame .showcase-image{display:block;width:100%;height:auto;aspect-ratio:709/1190;object-fit:contain;object-position:top;background:#0b111a;border-radius:10px}
+.showcase-frame figcaption{padding:12px 5px 5px;color:#e3c58f;font:700 12px/1.5 Inter,system-ui,sans-serif}
+.showcase-frame figcaption small{display:block;color:#9ba9b5;font-weight:400;font-size:10px}
+.showcase-fallback{display:grid;min-height:180px;align-content:center;text-align:center;padding:10px;color:#b5c5ce;font:12px/1.55 system-ui;gap:9px;border:1px dashed #62563f;border-radius:10px}
+.showcase-fallback[hidden],.showcase-image[hidden]{display:none!important}
+.showcase-fallback input{width:100%;font-size:10px;color:#d9c294}
+.showcase-journal{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:30px}
+.showcase-journal .showcase-frame{max-width:340px;width:100%;justify-self:center}
+.showcase-journal .showcase-image{aspect-ratio:709/1385}
+.showcase-caption{font:12px/1.6 system-ui;color:#a0aeb9;margin:14px 0 0}
+@media(max-width:520px){.showcase-gallery{gap:7px}.showcase-frame{padding:5px;border-radius:12px}.showcase-frame figcaption{font-size:10px;padding:8px 3px 3px}.showcase-frame figcaption small{font-size:9px}.showcase-journal{grid-template-columns:1fr;gap:16px}}
+
     </style>
 </head>
 <body class="bg-navy text-white font-sans antialiased min-h-screen flex flex-col">
@@ -40,7 +55,7 @@
     <nav class="sticky top-0 z-50 bg-navy/90 backdrop-blur-md border-b border-white/10">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded bg-tech flex items-center justify-center font-bold text-white text-sm">G</div>
+                <img src="./showcase/gongola-logo.svg" class="w-9 h-9 rounded-lg" alt="Gongola logo">
                 <span class="font-bold tracking-tight text-lg">Gongola ICT Hub</span>
             </div>
             <div class="hidden md:flex gap-6 text-sm font-medium text-muted">
@@ -64,7 +79,7 @@
         <div class="relative z-10 max-w-6xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tech/10 border border-tech/30 text-tech text-xs font-bold mb-6">
                 <span class="w-2 h-2 rounded-full bg-tech animate-pulse"></span>
-                Gongola Terminal · Research Preview
+                Gongola Terminal · Five Markets
             </div>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 max-w-4xl leading-tight">
                 An Integrated <br>
@@ -72,7 +87,7 @@
             </h1>
             <p class="text-xl md:text-2xl text-muted font-medium mb-4">Stop Gambling. Start Trading.</p>
             <p class="text-muted text-base md:text-lg max-w-2xl mb-10 leading-relaxed">
-                Combining financial-markets research, structured education, and proprietary technology in a transparent, research-first workspace. Current terminal coverage: XAU/USD (Gold) and BTC/USD (Bitcoin) only, on 5M and 15M charts.
+                Market intelligence, disciplined trader development and proprietary technology — connected in one professional trading ecosystem.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
                 <a href="https://gongolaictbot.vercel.app/intelligence" class="px-8 py-3 bg-surface border border-white/10 text-white font-bold rounded-lg hover:border-tech transition-colors">Explore Market Intelligence</a>
@@ -101,7 +116,7 @@
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 </div>
                 <h3 class="font-bold text-lg mb-2">Trading Technology</h3>
-                <p class="text-sm text-muted leading-relaxed">Building proprietary research tools, including Gongola Terminal, with execution capabilities kept separate from unverified research.</p>
+                <p class="text-sm text-muted leading-relaxed">Building tools for chart analysis, market intelligence and disciplined trading decisions.</p>
             </div>
             <!-- Pillar 3 -->
             <div class="bg-surface border border-white/5 p-6 rounded-xl transition-all card-hover">
@@ -129,7 +144,7 @@
                 <div>
                     <h2 class="text-3xl font-bold mb-4">The ICT Machine</h2>
                     <p class="text-muted mb-6 leading-relaxed">
-                        Gongola Terminal is our evolving ICT research workspace for examining liquidity, order blocks, fair value gaps, and market structure. The current research implementation is partial and not independently verified for strategy parity; its outputs are not live trade signals.
+                        Gongola Terminal is our dedicated ICT analysis workspace. Map buy-side and sell-side liquidity, identify order blocks and fair value gaps, track market structure, and inspect entry, stop-loss and risk-to-reward scenarios. Directional filters reduce chart clutter, while integrated macro briefings provide market context.
                     </p>
                     <a href="https://gongolaictbot.vercel.app/" class="inline-flex items-center justify-center px-7 py-3 mb-7 bg-tech text-navy font-bold rounded-lg hover:brightness-110 transition-all">Open Gongola Terminal ↗</a>
                     <div class="grid grid-cols-2 gap-4 mb-8">
@@ -141,19 +156,10 @@
                         <div class="flex items-center gap-2 text-sm text-white"><span class="w-1.5 h-1.5 rounded-full bg-tech"></span> Turtle Soup</div>
                     </div>
                     <div class="bg-navy border border-white/10 p-4 rounded-lg text-sm text-muted">
-                        <strong class="text-white">Current scope:</strong> XAU/USD and BTC/USD only, with 5M and 15M research charts. Market-data provenance and strategy parity must be checked before relying on any scenario. This is not an execution service or verified signal feed. Trading involves risk.
+                        <strong class="text-white">Five markets. Two timeframes.</strong> Gold (XAUUSD), Bitcoin (BTCUSD), Euro (EURUSD), Nasdaq-100 (US100, NDX cash index) and WTI crude oil (USOIL). 5M and 15M provider charts.
                     </div>
                 </div>
-                <div class="bg-navy border border-white/10 rounded-xl p-4 shadow-2xl">
-                    <!-- Placeholder for Machine Visual -->
-                    <div class="aspect-video bg-surface rounded-lg flex items-center justify-center relative overflow-hidden">
-                         <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-tech/20 via-transparent to-transparent"></div>
-                         <div class="text-center z-10">
-                            <svg class="w-16 h-16 text-tech mx-auto mb-2 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                            <span class="text-xs font-mono text-muted">ICT MACHINE TERMINAL</span>
-                         </div>
-                    </div>
-                </div>
+                <div><div class="showcase-gallery"><figure class="showcase-frame"><img class="showcase-image" data-showcase src="./showcase/gold-terminal.webp" alt="Actual Gongola Terminal gold chart with order blocks and daily and weekly liquidity." loading="lazy"><div class="showcase-fallback" hidden><span>Screenshot asset pending. Choose the prepared gold-terminal.webp for local preview.</span><input aria-label="Choose GOLD · XAUUSD screenshot" type="file" accept="image/*"></div><figcaption>GOLD · XAUUSD<small>15M · 25 Nov 2026</small></figcaption></figure><figure class="showcase-frame"><img class="showcase-image" data-showcase src="./showcase/bitcoin-terminal.webp" alt="Actual Gongola Terminal Bitcoin chart with bearish zones and liquidity levels." loading="lazy"><div class="showcase-fallback" hidden><span>Screenshot asset pending. Choose the prepared bitcoin-terminal.webp for local preview.</span><input aria-label="Choose BITCOIN · BTCUSD screenshot" type="file" accept="image/*"></div><figcaption>BITCOIN · BTCUSD<small>15M · 25 Nov 2026</small></figcaption></figure></div><p class="showcase-caption">Actual workspace captures, 25 November 2026 · Earlier interface version · Historical chart snapshots, not current quotes.</p></div>
             </div>
         </div>
     </section>
@@ -222,26 +228,7 @@
             <h2 class="text-3xl font-bold mb-4">Trading Journal</h2>
             <p class="text-muted max-w-2xl mx-auto">Document your trades, review your psychology, and analyze your performance over time.</p>
         </div>
-        <div class="bg-surface border border-white/10 rounded-2xl p-8 max-w-4xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div class="bg-navy p-4 rounded-xl text-center">
-                    <p class="text-xs text-muted uppercase mb-1">Net P&L</p>
-                    <p class="text-2xl font-bold text-green-400">+$4,250</p>
-                </div>
-                <div class="bg-navy p-4 rounded-xl text-center">
-                    <p class="text-xs text-muted uppercase mb-1">Win Rate</p>
-                    <p class="text-2xl font-bold text-white">68%</p>
-                </div>
-                <div class="bg-navy p-4 rounded-xl text-center">
-                    <p class="text-xs text-muted uppercase mb-1">Profit Factor</p>
-                    <p class="text-2xl font-bold text-tech">2.4</p>
-                </div>
-            </div>
-            <p class="text-xs text-center text-muted mb-6 italic">* Metrics shown are illustrative examples of the journal's tracking capabilities.</p>
-            <div class="text-center">
-                <a href="https://gongolatechlab.github.io/trading-journal/" class="inline-block px-6 py-2 border border-tech text-tech font-bold text-sm rounded hover:bg-tech hover:text-white transition-colors">Launch Journal</a>
-            </div>
-        </div>
+        <div class="bg-surface border border-white/10 rounded-2xl p-5 md:p-8 max-w-4xl mx-auto showcase-journal"><div><p class="text-xs text-accent font-bold tracking-widest mb-3">GONGOLA JOURNAL · PRO</p><h3 class="text-2xl font-bold mb-3">Measure the process.</h3><p class="text-muted leading-relaxed mb-5">Record trades, review sessions, track win rate, profit factor, expectancy and cumulative performance. Build a consistent record of your decisions.</p><a href="https://gongolatechlab.github.io/trading-journal/" class="inline-block px-6 py-3 border border-tech text-tech font-bold rounded-lg">Launch Journal ↗</a></div><figure class="showcase-frame"><img class="showcase-image" data-showcase src="./showcase/journal-dashboard.webp" alt="Actual Gongola Journal dashboard displaying net price points, win rate, profit factor and expectancy." loading="lazy"><div class="showcase-fallback" hidden><span>Screenshot asset pending. Choose the prepared journal-dashboard.webp for local preview.</span><input aria-label="Choose JOURNAL DASHBOARD screenshot" type="file" accept="image/*"></div><figcaption>JOURNAL DASHBOARD<small>Actual dashboard · empty trade history</small></figcaption></figure></div>
     </section>
 
     <!-- Physical Hub -->
@@ -264,7 +251,7 @@
     <!-- Community -->
     <section id="community" class="max-w-6xl mx-auto px-6 py-20 text-center">
         <h2 class="text-3xl font-bold mb-4">Join the Community</h2>
-        <p class="text-muted mb-8 max-w-xl mx-auto">Follow project updates, educational discussions, and community announcements. Research outputs are not verified trade signals.</p>
+        <p class="text-muted mb-8 max-w-xl mx-auto">Follow market briefings, educational discussions, technology updates and community announcements.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
             <a href="https://t.me/gongolaicthub" target="_blank" class="px-8 py-3 bg-tech text-white font-bold rounded-lg hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
@@ -277,7 +264,7 @@
     <footer class="border-t border-white/10 bg-navy mt-auto py-12">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-3">
-                <div class="w-6 h-6 rounded bg-surface2 flex items-center justify-center font-bold text-white text-xs">G</div>
+                <img src="./showcase/gongola-logo.svg" class="w-8 h-8 rounded-lg" alt="Gongola logo">
                 <span class="text-sm font-bold text-white">Gongola Tech Lab</span>
             </div>
             <div class="flex gap-6 text-sm text-muted">
@@ -287,7 +274,7 @@
             </div>
             <p class="text-xs text-muted text-center md:text-right max-w-xs">
                 &copy; 2026 Gongola Tech Lab. All rights reserved.<br>
-                Educational purposes only. Not financial advice. Trade at your own risk.
+                Market analysis and education only; not financial advice or broker execution. Trading involves risk. Data accuracy depends on the provider; past chart examples do not establish future performance.
             </p>
         </div>
     </footer>
@@ -297,5 +284,16 @@
       menu?.addEventListener('click',e=>{if(e.target.closest('a')){menu.hidden=true;toggle.setAttribute('aria-expanded','false');}});
     </script>
 
+<script>function mountShowcaseImages(root=document){
+ for(const image of root.querySelectorAll('img[data-showcase]')){
+  const fallback=image.nextElementSibling,input=fallback?.querySelector('input');
+  const missing=()=>{image.hidden=true;if(fallback)fallback.hidden=false;};
+  const loaded=()=>{image.hidden=false;if(fallback)fallback.hidden=true;};
+  image.addEventListener('error',missing);image.addEventListener('load',loaded);
+  if(image.complete){if(image.naturalWidth)loaded();else missing();}
+  input?.addEventListener('change',()=>{const file=input.files?.[0];if(file&&file.type.startsWith('image/')){const url=URL.createObjectURL(file);image.addEventListener('load',()=>URL.revokeObjectURL(url),{once:true});image.src=url;}});
+ }
+}
+mountShowcaseImages();</script>
 </body>
 </html>
