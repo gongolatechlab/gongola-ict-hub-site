@@ -1,0 +1,29 @@
+/* Shared Gongola visual identity: static assets, responsive layout, no new services. */
+:root{--hub-bg:#07131e;--hub-gold:#c9a66b;--hub-teal:#26c6a2;--hub-panel:#0a202b}
+body{background:var(--hub-bg);color:#e5eef2;font-family:Inter,system-ui,sans-serif}
+.hub-nav{background:#06131e url('./showcase/gongola-wave.svg') center bottom/100% 100% no-repeat!important;border-bottom:1px solid #8b7146!important}
+.hub-nav>div:first-child{min-height:72px;height:auto;padding-top:9px;padding-bottom:9px}
+.hub-brand{display:flex;flex-direction:column;line-height:1.05;gap:5px}
+.hub-brand strong{font-size:19px;letter-spacing:1.6px;color:#f0f5f6}.hub-brand small{font-size:9px;color:#e2bd78;font-weight:700;letter-spacing:2px}
+.hub-nav a:hover,.hub-nav a:focus-visible{color:#efd093}
+.hub-nav img,footer img{filter:drop-shadow(0 0 10px #c9a66b22)}
+.hub-hero{background:linear-gradient(160deg,#0c2933,#07131e 65%);isolation:isolate}
+.hub-hero>div:first-child{background:none!important}
+.hub-hero::before{content:'';position:absolute;inset:0;z-index:1;background:url('./showcase/gongola-wave.svg') center bottom/130% 55% no-repeat;opacity:.65;pointer-events:none;animation:hubWave 30s ease-in-out infinite alternate}
+@keyframes hubWave{from{background-position:0 100%}to{background-position:100% 100%}}
+.hub-gold-heading{color:#e4c486;background:linear-gradient(100deg,#f0d59c,#b38b4b);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hub-primary{background:linear-gradient(135deg,#c9a66b,#e2c58d);color:#07131e;border:1px solid #f0d093;text-align:center}
+.hub-primary:hover{filter:brightness(1.1)}
+.hub-hero-actions a:not(.hub-primary){border-color:#66827f;color:#e5eef2;background:#0a2630;text-align:center}
+section[id]{scroll-margin-top:88px}
+section h2{letter-spacing:-.5px;color:#f0f5f6}
+.card-hover,#research a,.showcase-journal{background:linear-gradient(145deg,#0c2833,#081923);border:1px solid #3e5b66!important}
+.card-hover:hover,#research a:hover{border-color:#c9a66b!important;box-shadow:0 10px 30px #0004}
+#technology,#development{background:linear-gradient(150deg,#0b2430,#07131e);border-color:#3c5159}
+#technology a.bg-tech{background:#c9a66b;color:#07131e}
+.showcase-frame{background:#091b26;border-color:#8b7146;border-radius:12px}
+.showcase-caption{color:#9bb2be}
+footer{background:#07131e url('./showcase/gongola-wave.svg') center bottom/100% 100% no-repeat!important;border-top:1px solid #8b7146!important}
+a:focus-visible,button:focus-visible{outline:2px solid #c9a66b;outline-offset:3px}
+@media(max-width:767px){.hub-nav>div:first-child{min-height:66px;padding-inline:14px}.hub-brand strong{font-size:17px}.hub-brand small{font-size:8px}.hub-hero>div:nth-child(2){padding:48px 16px 58px}.hub-hero h1{font-size:clamp(30px,9vw,40px)}.hub-hero-actions{width:100%;max-width:320px}.hub-mobile-menu{background:#091e29!important}section[id]{padding-top:44px;padding-bottom:44px}.showcase-gallery{gap:7px}footer{padding:30px 0}}
+@media(prefers-reduced-motion:reduce){.hub-hero::before{animation:none}html{scroll-behavior:auto}}

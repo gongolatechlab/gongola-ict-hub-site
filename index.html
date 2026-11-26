@@ -11,12 +11,12 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: '#090D11',
-                        surface: '#11171D',
-                        surface2: '#1B252E',
-                        tech: '#48B99B',
-                        accent: '#D1AB68',
-                        muted: '#98A3AE'
+                        navy: '#07131E',
+                        surface: '#0A202B',
+                        surface2: '#102631',
+                        tech: '#26C6A2',
+                        accent: '#C9A66B',
+                        muted: '#9BB2BE'
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -28,10 +28,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
-        .card-hover:hover { border-color: #48B99B; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(72, 185, 155, 0.1); }
+        .card-hover:hover { border-color: #26C6A2; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(72, 185, 155, 0.1); }
         html { scroll-behavior: smooth; }
         .hub-mobile-menu[hidden] { display: none !important; }
-        @media(max-width:767px){.hub-mobile-menu{display:flex;flex-direction:column;padding:8px 24px 16px;background:#11171d;border-top:1px solid #29343d}.hub-mobile-menu a{padding:12px 4px;border-bottom:1px solid #29343d;color:#dbe4e6;font-size:14px}}
+        @media(max-width:767px){.hub-mobile-menu{display:flex;flex-direction:column;padding:8px 24px 16px;background:#0a202b;border-top:1px solid #29343d}.hub-mobile-menu a{padding:12px 4px;border-bottom:1px solid #29343d;color:#dbe4e6;font-size:14px}}
         
 .showcase-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start;margin:0}
 .showcase-frame{margin:0;padding:9px;border:1px solid #584c39;border-radius:17px;background:#101923;box-shadow:0 16px 35px #0005;min-width:0;overflow:hidden}
@@ -44,19 +44,21 @@
 .showcase-caption{font:12px/1.6 system-ui;color:#a0aeb9;margin:14px 0 0}
 @media(max-width:520px){.showcase-gallery{gap:7px}.showcase-frame{padding:5px;border-radius:12px}.showcase-frame figcaption{font-size:10px;padding:8px 3px 3px}.showcase-frame figcaption small{font-size:9px}.showcase-journal{grid-template-columns:1fr;gap:16px}}
 
+
     </style>
+    <link rel="stylesheet" href="./institutional.css">
 </head>
 <body class="bg-navy text-white font-sans antialiased min-h-screen flex flex-col">
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-navy/90 backdrop-blur-md border-b border-white/10">
+    <nav class="hub-nav sticky top-0 z-50 bg-navy/90 backdrop-blur-md border-b border-white/10">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <img src="./showcase/gongola-logo.svg" class="w-9 h-9 rounded-lg" alt="Gongola logo">
-                <span class="font-bold tracking-tight text-lg">Gongola ICT Hub</span>
+                <span class="hub-brand"><strong>GONGOLA</strong><small>I C T &nbsp; H U B</small></span>
             </div>
             <div class="hidden md:flex gap-6 text-sm font-medium text-muted">
-                <a href="#institution" class="hover:text-white transition-colors">Institution</a>
+                <a href="https://gongolaictbot.vercel.app/terminal" class="hover:text-white transition-colors">Terminal</a><a href="#institution" class="hover:text-white transition-colors">Institution</a>
                 <a href="#technology" class="hover:text-white transition-colors">Technology</a>
                 <a href="#research" class="hover:text-white transition-colors">Research</a>
                 <a href="#development" class="hover:text-white transition-colors">Development</a>
@@ -67,26 +69,27 @@
 
             </div>
         </div>
-        <div id="hub-mobile-menu" class="hub-mobile-menu md:hidden" hidden><a href="#institution">Institution</a><a href="#technology">Technology</a><a href="#research">Research</a><a href="#development">Development</a><a href="https://gongolaictbot.vercel.app/intelligence">Market Intelligence</a><a href="https://gongolatechlab.github.io/trading-journal/">Trading Journal</a></div>
+        <div id="hub-mobile-menu" class="hub-mobile-menu md:hidden" hidden><a href="https://gongolaictbot.vercel.app/terminal">Trading Terminal</a><a href="#institution">Institution</a><a href="#technology">Technology</a><a href="#research">Research</a><a href="#development">Development</a><a href="https://gongolaictbot.vercel.app/intelligence">Market Intelligence</a><a href="https://gongolatechlab.github.io/trading-journal/">Trading Journal</a></div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative border-b border-white/10 overflow-hidden">
+    <header class="hub-hero relative border-b border-white/10 overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-tech/20 via-navy to-navy z-0"></div>
         <div class="relative z-10 max-w-6xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tech/10 border border-tech/30 text-tech text-xs font-bold mb-6">
-                <span class="w-2 h-2 rounded-full bg-tech animate-pulse"></span>
+                <span class="w-2 h-2 rounded-full bg-tech"></span>
                 Gongola Terminal · Five Markets
             </div>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 max-w-4xl leading-tight">
                 An Integrated <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-tech to-emerald-300">Trading Institution</span>
+                <span class="hub-gold-heading">Trading Institution</span>
             </h1>
             <p class="text-xl md:text-2xl text-muted font-medium mb-4">Stop Gambling. Start Trading.</p>
             <p class="text-muted text-base md:text-lg max-w-2xl mb-10 leading-relaxed">
                 Market intelligence, disciplined trader development and proprietary technology, connected in one professional trading ecosystem.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
+            <div class="hub-hero-actions flex flex-col sm:flex-row gap-4">
+                <a href="https://gongolaictbot.vercel.app/terminal" class="hub-primary px-8 py-3 rounded-lg font-bold">Open Gongola Terminal ↗</a>
                 <a href="https://gongolaictbot.vercel.app/intelligence" class="px-8 py-3 bg-surface border border-white/10 text-white font-bold rounded-lg hover:border-tech transition-colors">Explore Market Intelligence</a>
             </div>
         </div>
@@ -143,7 +146,7 @@
                     <p class="text-muted mb-6 leading-relaxed">
                         Gongola Terminal is our dedicated ICT analysis workspace. Map buy-side and sell-side liquidity, identify order blocks and fair value gaps, track market structure, and inspect entry, stop-loss and risk-to-reward scenarios. Directional filters reduce chart clutter, while integrated macro briefings provide market context.
                     </p>
-                    <a href="https://gongolaictbot.vercel.app/" class="inline-flex items-center justify-center px-7 py-3 mb-7 bg-tech text-navy font-bold rounded-lg hover:brightness-110 transition-all">Open Gongola Terminal ↗</a>
+                    <a href="https://gongolaictbot.vercel.app/terminal" class="inline-flex items-center justify-center px-7 py-3 mb-7 bg-tech text-navy font-bold rounded-lg hover:brightness-110 transition-all">Open Gongola Terminal ↗</a>
                     <div class="grid grid-cols-2 gap-4 mb-8">
                         <div class="flex items-center gap-2 text-sm text-white"><span class="w-1.5 h-1.5 rounded-full bg-tech"></span> Liquidity Tracking</div>
                         <div class="flex items-center gap-2 text-sm text-white"><span class="w-1.5 h-1.5 rounded-full bg-tech"></span> Order Blocks</div>
@@ -153,7 +156,7 @@
                         <div class="flex items-center gap-2 text-sm text-white"><span class="w-1.5 h-1.5 rounded-full bg-tech"></span> Turtle Soup</div>
                     </div>
                     <div class="bg-navy border border-white/10 p-4 rounded-lg text-sm text-muted">
-                        <strong class="text-white">Five markets. Two timeframes.</strong> Gold (XAUUSD), Bitcoin (BTCUSD), Euro (EURUSD), Nasdaq-100 (US100, NDX cash index) and WTI crude oil (USOIL). 5M and 15M provider charts.
+                        <strong class="text-white">Five markets. Three timeframes.</strong> Gold (XAUUSD), Bitcoin (BTCUSD), Euro (EURUSD), US Dollar / Canadian Dollar (USDCAD), and British Pound / Japanese Yen (GBPJPY). 5M, 15M and 1H completed provider candles.
                     </div>
                 </div>
                 <div><div class="showcase-gallery"><figure class="showcase-frame"><img class="showcase-image" src="https://gongolaictbot.vercel.app/api/charts?mode=images&category=development&id=bbf4e97e-cbcd-4deb-a3c9-78610c262d58" alt="Actual Gongola Terminal gold chart with native ICT overlays." loading="lazy"><figcaption>GOLD · XAUUSD<small>15M · 25 Nov 2026</small></figcaption></figure><figure class="showcase-frame"><img class="showcase-image" src="https://gongolaictbot.vercel.app/api/charts?mode=images&category=development&id=3d644287-452f-40f2-93d9-9a0512b91fdc" alt="Actual Gongola Terminal Bitcoin chart with native ICT overlays." loading="lazy"><figcaption>BITCOIN · BTCUSD<small>15M · 25 Nov 2026</small></figcaption></figure></div><p class="showcase-caption">Actual workspace captures, 25 November 2026 · Historical chart snapshots, not current quotes.</p></div>
@@ -266,7 +269,7 @@
             </div>
             <div class="flex gap-6 text-sm text-muted">
                 <a href="https://gongolatechlab.github.io/trading-journal/" class="hover:text-white transition-colors">Journal</a>
-                <a href="https://gongolaictbot.vercel.app/" class="hover:text-white transition-colors">Terminal</a>
+                <a href="https://gongolaictbot.vercel.app/terminal" class="hover:text-white transition-colors">Terminal</a>
                 <a href="https://gongolatechlab.github.io/gongola-ict-hub/glossary/" class="hover:text-white transition-colors">Glossary</a>
             </div>
             <p class="text-xs text-muted text-center md:text-right max-w-xs">
